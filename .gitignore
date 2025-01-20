@@ -1,0 +1,11 @@
+
+# exclude everything
+/*
+
+# except:
+!alacritty
+!fuzzel
+!hypr
+!sway
+!waybar
+!.gitignore

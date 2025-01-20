@@ -4,12 +4,8 @@
     ],
 
     "sway/window": {
-        "format": "~ {app_id}",
+        "format": "<b>{app_id}:</b> <i>{title}</i>",
         "max-length": 50,
         "tooltip": true,
-        "rewrite": {
-            "(.*) - Mozilla Firefox": "🌎 $1",
-            "(.*) - bash": " [$1]"
-         },
     },
 }

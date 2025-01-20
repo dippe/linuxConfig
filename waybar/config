@@ -5,9 +5,6 @@
 
 
   "include": [
-    "~/.config/waybar/custom/clock.json",
-    "~/.config/waybar/custom/hardware.json",
-
     "~/.config/waybar/custom/left.json",
     "~/.config/waybar/custom/center.json",
     "~/.config/waybar/custom/right.json",
@@ -23,17 +20,10 @@
 
 
   // Modules configuration
-
-
-  "idle_inhibitor": {
-    "format": "{icon}",
-    "format-icons": {
-       "activated": "",
-        "deactivated": ""
-    }
-  },
-
   
+  "custom/sep": {
+    "format": " ⁝⁝",
+  },
 
   // *** example of scheduled exec: ***
 

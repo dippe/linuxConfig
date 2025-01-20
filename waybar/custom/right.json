@@ -2,27 +2,48 @@
   "modules-right": [
     "tray",
 
+    "custom/sep",
+
     "backlight",
     "pulseaudio",
-    "custom/keyboard-layout",
+    "pulseaudio#microphone",
+    "custom/sep",
+
+    "cpu",
     "temperature",
     "memory",
     "battery",
+    "custom/sep",
+
     "network",
+    "custom/keyboard-layout",
     "clock",
+    "custom/notification",
+    "custom/sep",
+
     "custom/power",
   ],
 
-  
+  "include": [
+    "~/.config/waybar/custom/clock.json",
+    "~/.config/waybar/custom/hardware.json",
+  ],
+
+
   "network": {
     // "interface": "wlp2s0", // (Optional) To force the use of this interface
     "format": "⚠  Disabled",
-    "format-wifi": "  {essid}",
+    "format-wifi": "  {essid} ({signalStrength}%)",
     // "format-ethernet": " {ifname}: {ipaddr}/{cidr}",
     "format-ethernet": "  Wired",
-    "format-disconnected": "⚠  Disconnected",
+    "format-disconnected": "⚠  Offline",
     "on-click-right": "alacritty -e nmtui",
     "on-click": "nm-connection-editor",
+
+    "tooltip-format": "{ifname} via {gwaddr} :: {ipaddr}/{cidr} 󰊗",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%) :: {ipaddr}/{cidr} ",
+    "tooltip-format-ethernet": "{ifname} :: {ipaddr}/{cidr} ",
+    "tooltip-format-disconnected": "Disconnected",
   },
   "custom/keyboard-layout": {
     "exec": "swaymsg -t get_inputs | grep -m1 'xkb_active_layout_name' | cut -d '\"' -f4",
@@ -39,24 +60,80 @@
     "on-click": "nwgbar",
     "tooltip": false
   },
+
+
   "pulseaudio": {
-    "scroll-step": 1,
-    "format": "{icon} {volume: >3}%",
-    "format-bluetooth": "{icon} {volume: >3}%",
-    "format-muted": " muted",
-    "format-icons": {
-      "headphones": "",
-      "handsfree": "",
-      "headset": "",
-      "phone": "",
-      "portable": "",
-      "car": "",
-      "default": ["", ""]
-    },
-    "on-click": "pavucontrol",
-    "on-scroll-up": "pamixer -ui 2 && pamixer --get-volume > $SWAYSOCK.wob",
-    "on-scroll-down": "pamixer -ud 2 && pamixer --get-volume > $SWAYSOCK.wob"
+    "format": "{icon} {volume}%",
+      "format-muted": "🔇 muted",
+      "on-click": "amixer set Master toggle",
+      "on-scroll-up": "amixer set Master 5%-",
+      "on-scroll-down": "amixer set Master 5%+",
+      "on-click-right": "pavucontrol",
+      "scroll-step": 5,
+      "format-icons": {
+        "headphone": "",
+        "hands-free": "",
+        "headset": "",
+        "phone": "",
+        "portable": "",
+        "car": "",
+        "default": ["", "", ""]
+      },
+      "tooltip": false
+      // "tooltip-format": "{icon} at {volume}%"
   },
+
+
+  "pulseaudio#microphone": {
+    "format": "{format_source}",
+    "format-source": " {volume}%",
+    "format-source-muted": " {volume}%",
+    "on-click": "amixer set Capture toggle",
+    "on-scroll-up": "amixer set Capture 5%-",
+    "on-scroll-down": "amixer set Capture 5%+",
+    "on-click-right": "pavucontrol -t 4",
+    // open pavucontrol tab number 4 (input)
+    "scroll-step": 5,
+    "tooltip": false
+    // "tooltip-format": " at {volume}%"
+  },
+
+  // "pulseaudio": {
+  //   "scroll-step": 1,
+  //   "format": "{icon} {volume: >3}%",
+  //   "format-bluetooth": "{icon} {volume: >3}%",
+  //   "format-muted": " muted",
+  //   "format-icons": {
+  //     "headphones": "",
+  //     "handsfree": "",
+  //     "headset": "",
+  //     "phone": "",
+  //     "portable": "",
+  //     "car": "",
+  //     "default": ["", ""]
+  //   },
+  //   "on-click": "pavucontrol",
+  //   "on-scroll-up": "pamixer -ui 2 && pamixer --get-volume > $SWAYSOCK.wob",
+  //   "on-scroll-down": "pamixer -ud 2 && pamixer --get-volume > $SWAYSOCK.wob"
+  // },
+
+  "custom/notification": {
+    "tooltip": true,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "<span foreground='red'><small><sup>⬤</sup></small></span>",
+      "none": " ",
+      "dnd-notification": "<span foreground='red'><small><sup>⬤</sup></small></span>",
+      "dnd-none": " "
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  }, 
+
   "tray": {
     "icon-size": 14,
     "spacing": 5

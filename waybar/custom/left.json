@@ -2,9 +2,12 @@
   "modules-left": [
     "custom/launcher",
     "sway/workspaces",
+    "custom/sep",
     "custom/config-swap",
     "custom/restart",
     "idle_inhibitor",
+    "tray",
+    "custom/sep",
     "sway/mode",
   ],
 
@@ -47,6 +50,20 @@
   "sway/mode": {
     "format": "<span style=\"italic\">{}</span>",
     "max-length": 50
+  },
+
+  // ???
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+       "activated": "",
+        "deactivated": ""
+    }
+  },
+
+  "tray": {
+    // "icon-size": 21,
+    "spacing": 12,
   },
 
 }
