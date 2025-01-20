@@ -1,0 +1,52 @@
+{
+  "modules-left": [
+    "custom/launcher",
+    "sway/workspaces",
+    "custom/config-swap",
+    "custom/restart",
+    "idle_inhibitor",
+    "sway/mode",
+  ],
+
+  // Module configurations
+
+  // house icon, starts the "menu"
+  "custom/launcher": {
+    "format": " ",
+    "on-click": "exec fuzzel",
+    "tooltip": false
+  },
+
+  // for waybar development - easier restart
+  "custom/restart": {
+    // you can start a custom command immediately after starting the waybar
+    //"exec": "sh ~/.config/waybar/scripts/something.sh",
+    "format": "Reload conf",
+    "tooltip": false,
+    "on-click": "swaymsg reload & pkill waybar & waybar",
+    "layer": "below",
+    "output": "all"
+  },
+
+
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "format": "{name}ss< %g >",
+    "format_focused" : "< %g ● >",
+  },
+
+  // swap full config of waybar
+  "custom/config-swap": {
+    "on-click": "~/.config/waybar/scripts/swap.sh",
+    "tooltip": "Swap between waybar configs",
+    "format": "Bg  "
+  },
+
+  // display sway "mode" texts or controls e.g. ctrl-esc for exit
+  "sway/mode": {
+    "format": "<span style=\"italic\">{}</span>",
+    "max-length": 50
+  },
+
+}

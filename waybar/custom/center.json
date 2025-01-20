@@ -1,0 +1,15 @@
+{
+    "modules-center": [
+        "sway/window",
+    ],
+
+    "sway/window": {
+        "format": "~ {app_id}",
+        "max-length": 50,
+        "tooltip": true,
+        "rewrite": {
+            "(.*) - Mozilla Firefox": "🌎 $1",
+            "(.*) - bash": " [$1]"
+         },
+    },
+}

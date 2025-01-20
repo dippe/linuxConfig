@@ -1,0 +1,59 @@
+{
+    // *** Hardware monitoring and control ***
+    //
+    //
+    
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{percent}% {icon}",
+        "format-icons": [
+            "",
+            ""
+        ]
+    },
+    "cpu": {
+        "format": "﬙ {usage: >3}%",
+        "on-click": "alacritty -e htop"
+    },
+    "memory": {
+        "format": " {: >3}%",
+        "on-click": "alacritty -e htop"
+    },
+    "temperature": {
+        // "thermal-zone": 2,
+        "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
+        "critical-threshold": 80,
+        // "format-critical": "{temperatureC}°C ",
+        "format": "  {temperatureC}°C"
+    },
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{icon} {percent: >3}%",
+        "format-icons": [
+            "",
+            ""
+        ],
+        // "on-scroll-down": "brightnessctl -c backlight set 5%-",
+        "on-scroll-down": "light -A 5 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob",
+        // "on-scroll-up": "brightnessctl -c backlight set +5%"
+        "on-scroll-up": "light -U 5 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob"
+    },
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity: >3}%",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+        //"format-icons": ["", "", "", "", "", "", "", "", "", ""]
+    },
+}
