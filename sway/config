@@ -133,7 +133,8 @@ bindsym $mod+a exec $menu2
 bindsym $mod+x exec swaylock -f -C ~/.config/swaylock/config
 
 # Toggle bar
-bindsym $mod+shift+b exec toggle-swaybar
+bindsym $mod+shift+b exec killall waybar
+bindsym $mod+b exec waybar
 
 # Cycle app
 bindsym $alt+Tab exec pkill wofi || ~/.config/wofi/windows.py
@@ -289,8 +290,8 @@ bindsym $mod+Tab workspace back_and_forth
 # Layout stuff:
 # $mod+m or $mod+n, for horizontal and vertical splits
 # respectively.
-bindsym $mod+n splitv
-bindsym $mod+b splith
+#bindsym $mod+n splitv
+#bindsym $mod+b splith
 
 # Switch the current container between different layout styles
 bindsym $mod+s layout stacking
@@ -370,10 +371,22 @@ client.urgent           #2f343a #be3645 #f2f2f2 #be3645   #be3645
 client.placeholder      #000000 #0c0c0c #f2f2f2 #000000   #0c0c0c
 client.background       #f2f2f2
 
+#
 # Status Bar:
+#
+# Read `man 5 sway-bar` for more information about this section.
+# When the status_command prints a new line to stdout, swaybar updates.
+# The default just shows the current date and time.
+# status_command while date +'%A, %d-%m-%Y %H:%M %j'; do sleep 1; done
+#
 bar {
     swaybar_command waybar
     position top
+
+    # show-hide toggle using the Mod4:
+    hidden_state hide
+    mode hide
+    modifier Mod4
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
