@@ -5,11 +5,11 @@
 
 
     "cpu": {
-        "format": "CPU {usage: >1}%",
+        "format": " {usage: >1}%",
         "on-click": "alacritty -e htop"
     },
     "memory": {
-        "format": "M {: >1}%",
+        "format": " {: >1}%",
         "on-click": "alacritty -e btop"
     },
 

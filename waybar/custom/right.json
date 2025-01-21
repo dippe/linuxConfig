@@ -10,8 +10,8 @@
     "custom/sep",
 
     "cpu",
-    "temperature",
     "memory",
+    "temperature",
     "battery",
     "custom/sep",
 
