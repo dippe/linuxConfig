@@ -6,10 +6,16 @@
 
     "cpu": {
         "format": " {usage: >1}%",
+        // "format": " {icon}",
+        // "format-icons": [ " ", "▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+        "tooltip": true,
+        "tooltip-format": "cpu: {icon} {usage}%",
         "on-click": "alacritty -e htop"
     },
     "memory": {
         "format": " {: >1}%",
+        "tooltip": true,
+        "tooltip-format": "ram: {used} GB / {total} GB ({percentage}%) / Swap used: {swapUsed}GB",
         "on-click": "alacritty -e btop"
     },
 
@@ -22,7 +28,8 @@
         "format-icons": [
             "",
             "",
-            "♨🌶"
+            // "♨🌶"
+            "🌶"
         ]
     },
     "backlight": {
@@ -32,7 +39,8 @@
             "",
             ""
         ]
-        //"format-icons": [ "▁", "▄", "█", "", "", "", "", "", "" ],
+        // "format": " {icon}",
+        // "format-icons": [ " ", "▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
     },
     "battery": {
         "states": {
@@ -53,6 +61,21 @@
         ]
     },
 
+    "custom/gpu": {
+        "exec": "cat /sys/class/drm/card0/device/gpu_busy_percent",
+        "format": "gpu: {icon} {}%",
+        "format-icons": [
+            "▁",
+            "▂",
+            "▃",
+            "▄",
+            "▅",
+            "▆",
+            "▇",
+            "█"
+        ],
+        "interval": 1
+    },
 
     // "temperature": {
     //     // "thermal-zone": 2,
