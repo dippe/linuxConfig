@@ -13,6 +13,7 @@
     "memory",
     "temperature",
     "battery",
+    // "custom/gpu",
     "custom/sep",
 
     "network",
@@ -21,6 +22,7 @@
     "custom/notification",
     "custom/sep",
 
+    // "user",
     "custom/power",
   ],
 
@@ -137,5 +139,11 @@
   "tray": {
     "icon-size": 14,
     "spacing": 5
+  },
+
+  "user": {
+    "format": "{user}",
+    "exec": "whoami",
+    "interval": 1
   },
 }
