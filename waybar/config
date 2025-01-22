@@ -5,9 +5,9 @@
 
 
   "include": [
-    "~/.config/waybar/custom/left.json",
-    "~/.config/waybar/custom/center.json",
-    "~/.config/waybar/custom/right.json",
+    "~/.config/waybar/custom/left.jsonc",
+    "~/.config/waybar/custom/center.jsonc",
+    "~/.config/waybar/custom/right.jsonc",
   ],
 
   "bar_id": "bar-0",
