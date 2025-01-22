@@ -35,8 +35,17 @@
   "sway/workspaces": {
     "disable-scroll": true,
     "all-outputs": true,
-    "format": "{name}ss< %g >",
+    "format": "{name}",
     "format_focused" : "< %g ● >",
+    // name : output (default all)
+    "persistent-workspaces": {
+      "1": [],
+			"2": [],
+			"3": [],
+			"4": [],
+			"5": [],
+			"6": [],
+    }
   },
 
   // swap full config of waybar
