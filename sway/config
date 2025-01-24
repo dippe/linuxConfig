@@ -161,8 +161,8 @@ bindsym $mod+F2 exec changemicvol down && get-mic-volume > $WOBSOCK
 bindsym $mod+F3 exec changemicvol up && get-mic-volume > $WOBSOCK
 
 # Brightness
-bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
-bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym --locked XF86MonBrightnessUp exec brightnessctl set 2%+
+bindsym --locked XF86MonBrightnessDown exec brightnessctl set 2%-
 
 # Applications
 bindsym $mod+Shift+e exec $FMGR
@@ -384,8 +384,8 @@ bar {
     position top
 
     # show-hide toggle using the Mod4:
-    hidden_state hide
-    mode hide
+    #hidden_state hide
+    #mode hide
     modifier Mod4
 
     # When the status_command prints a new line to stdout, swaybar updates.
