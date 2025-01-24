@@ -10,5 +10,6 @@
 !waybar
 !gammastep
 !.gitignore
+!kitty
 
 waybar/tmp
