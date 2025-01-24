@@ -58,6 +58,8 @@
 	box-shadow: none;
 	text-shadow: none;
 	icon-shadow: none;
+
+	transition: all 0.5s ease;
 }
 
 /* The whole bar */

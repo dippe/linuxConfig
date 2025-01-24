@@ -3,6 +3,8 @@
     "custom/launcher",
     "sway/workspaces",
     "custom/sep",
+    "wlr/taskbar",
+
     "custom/config-swap",
     "custom/restart",
     "idle_inhibitor",
@@ -75,4 +77,17 @@
     "spacing": 12,
   },
 
+    "wlr/taskbar": {
+      "format": "{icon}",
+      "sort-by-app-id": true,
+      "icon-size": 13,
+      "icon-theme": "Numix-Circle",
+      "tooltip-format": "{title}",
+      "on-click": "activate",
+      "on-click-right": "close",
+      "markup": true,
+      "ignore-list": [
+        "kitty"
+      ],
+    },
 }
