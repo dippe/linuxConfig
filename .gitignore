@@ -8,4 +8,7 @@
 !hypr
 !sway
 !waybar
+!gammastep
 !.gitignore
+
+waybar/tmp
