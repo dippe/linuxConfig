@@ -2,14 +2,14 @@
 
 swaymsg workspace stats
 if [ "$1" == "cpu" ]; then
-    alacritty -e "btop -p1"
+    alacritty -e btop -p 6
     exit
 fi
 
 if [ "$1" == "memory" ]; then
-    alacritty -e "btop -p6"
+    alacritty -e btop -p 5
     exit
 fi
 
-alacritty "btop"
+alacritty -e btop
 exit
