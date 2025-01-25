@@ -2,14 +2,15 @@
   // dp's waybar configuration
   //
   // module docs: https://github.com/Alexays/Waybar/wiki
-
-
+  //
+  
   "include": [
-    "~/.config/waybar/custom/left.jsonc",
-    "~/.config/waybar/custom/center.jsonc",
-    "~/.config/waybar/custom/right.jsonc",
+    "~/.config/waybar/custom/clock.jsonc",
+    "~/.config/waybar/custom/hardware.jsonc",
+    "~/.config/waybar/custom/misc.jsonc",
+    "~/.config/waybar/custom/audio.jsonc",
   ],
-
+  
   "bar_id": "bar-0",
   "ipc": true,
   "layer": "top", // Waybar at top layer
@@ -17,25 +18,54 @@
   "height": 35,
   "margin": "0 0 0 0",
   //"width": 1350, // Waybar width
-  // Choose the order of the modules idle_inhibitor
-
-
-
-  // Modules configuration
   
-  "custom/sep": {
-    "format": " ⁝⁝",
-  },
 
-  // *** example of scheduled exec: ***
-
-  // "custom/pacman": {
-  //   "format": " {}",
-  //   "interval": 7200, // every two hours
-  //   "exec": "i=$(checkupdates); echo \"$i\" |wc -l; echo \"$i\" |column -t |tr '\n' '\r'", // # of updates and tooltip details
-  //   "exec-if": "exit 0", // always run; consider advanced run conditions
-  //   "on-click": "alacritty -e sudo pacman -Syu", // update system
-  //   "signal": 8
-  // },
+  "modules-center": [
+    // window title
+    "sway/window",
+  ],  
+  "modules-left": [
+    // house icon + menu
+    "custom/launcher",
+    "sway/workspaces",
+    "custom/sep",
+    // running task icons
+    "wlr/taskbar",
+    // waybar config change
+    "custom/config-swap",
+    "custom/reload-config",
+    "idle_inhibitor",
+    // tray for bg programs
+    "tray",
+    "custom/sep",
+    // display sway "mode" texts or controls e.g. ctrl-esc for exit
+    "sway/mode",
+  ],  
+  "modules-right": [
+    "tray",
+    "custom/sep",
+     //?? dunno'
+    "sway/scratchpad",
+    "custom/bluelightfilter",
+    "backlight",
+    "pulseaudio",
+    "pulseaudio#microphone",
+    "custom/sep",
+    "cpu",
+    "memory",
+    "disk",
+    "temperature",
+    "battery",
+    // "custom/gpu",
+    "custom/sep",
+    "network",
+    "custom/keyboard-layout",
+    "clock",
+    // open the notification panel
+    "custom/notification",
+    "custom/sep",
+    // "user",
+    "custom/power",
+  ],  
 
 }

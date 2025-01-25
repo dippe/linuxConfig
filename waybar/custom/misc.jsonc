@@ -1,0 +1,157 @@
+{
+    //
+    // Misc module configurations
+    //
+    "custom/sep": {
+        "format": " ⁝⁝",
+    },
+    // house icon, starts the "menu"
+    "custom/launcher": {
+        "format": " ",
+        "on-click": "exec fuzzel",
+        "tooltip": false
+    },
+    // window title
+    "sway/window": {
+        "format": "<b>{app_id}:</b> <i>{title}</i>",
+        "max-length": 50,
+        "tooltip": true,
+    },
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{name}",
+        "format_focused": "< %g ● >",
+        // name : output (default all)
+        "persistent-workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": [],
+            "6": [],
+        }
+    },
+    // display sway "mode" texts or controls e.g. ctrl-esc for exit
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>",
+        "max-length": 50
+    },
+    // swap full config of waybar
+    "custom/config-swap": {
+        "on-click": "~/.config/waybar/scripts/swap.sh",
+        "tooltip": "Swap between waybar configs",
+        "format": "Bg  "
+    },
+    // runing task icons
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "sort-by-app-id": true,
+        "icon-size": 13,
+        "icon-theme": "Numix-Circle",
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-right": "close",
+        "markup": true,
+        "ignore-list": [
+            "kitty"
+        ],
+    },
+    // tray for bg programs
+    "tray": {
+        "icon-size": 14,
+        "spacing": 5
+    },
+    // ???
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    // house icon, starts the "menu"
+    "custom/launcher": {
+        "format": " ",
+        "on-click": "exec fuzzel",
+        "tooltip": false
+    },
+    // for waybar development - easier restart
+    "custom/reload-config": {
+        // you can start a custom command immediately after starting the waybar
+        //"exec": "sh ~/.config/waybar/scripts/something.sh",
+        "format": "Reload conf",
+        "tooltip": false,
+        "on-click": "swaymsg reload & pkill waybar & waybar",
+        "layer": "below",
+        "output": "all"
+    },
+    // open the notification panel
+    "custom/notification": {
+        "tooltip": true,
+        "format": "{icon}",
+        "format-icons": {
+            "notification": "<span foreground='red'><small><sup>⬤</sup></small></span>",
+            "none": " ",
+            "dnd-notification": "<span foreground='red'><small><sup>⬤</sup></small></span>",
+            "dnd-none": " "
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+    },
+    "user": {
+        "format": "{user}",
+        "exec": "whoami",
+        "interval": 1
+    },
+    "custom/bluelightfilter": {
+        "format": "🌅",
+        "interval": 10,
+        "return-type": "json",
+        "exec": "~/.config/waybar/scripts/bluelightfilter-monitor.sh",
+        "on-click": "~/.config/waybar/scripts/bluelightfilter-toggle.sh",
+        "signal": 8
+    },
+    "network": {
+        // "interface": "wlp2s0", // (Optional) To force the use of this interface
+        "format": "⚠  Disabled",
+        "format-wifi": "  {essid} ({signalStrength}%)",
+        // "format-ethernet": " {ifname}: {ipaddr}/{cidr}",
+        "format-ethernet": "  Wired",
+        "format-disconnected": "⚠  Offline",
+        "on-click-right": "alacritty -e nmtui",
+        "on-click": "nm-connection-editor",
+        "tooltip-format": "{ifname} via {gwaddr} :: {ipaddr}/{cidr} 󰊗",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%) :: {ipaddr}/{cidr} ",
+        "tooltip-format-ethernet": "{ifname} :: {ipaddr}/{cidr} ",
+        "tooltip-format-disconnected": "Disconnected",
+    },
+    "custom/keyboard-layout": {
+        "exec": "swaymsg -t get_inputs | grep -m1 'xkb_active_layout_name' | cut -d '\"' -f4",
+        // Interval set only as a fallback, as the value is updated by signal
+        "interval": 1,
+        "format": "  {}", // Icon: keyboard
+        // Signal sent by Sway key binding (~/.config/sway/key-bindings)
+        "signal": 1, // SIGHUP
+        "tooltip": false,
+        "on-click": ""
+    },
+    "custom/power": {
+        "format": "⏻",
+        "on-click": "nwg-bar",
+        "tooltip": false
+    },
+    // *** example of scheduled exec: ***
+    // "custom/pacman": {
+    //   "format": " {}",
+    //   "interval": 7200, // every two hours
+    //   "exec": "i=$(checkupdates); echo \"$i\" |wc -l; echo \"$i\" |column -t |tr '\n' '\r'", // # of updates and tooltip details
+    //   "exec-if": "exit 0", // always run; consider advanced run conditions
+    //   "on-click": "alacritty -e sudo pacman -Syu", // update system
+    //   "signal": 8
+    // },
+}

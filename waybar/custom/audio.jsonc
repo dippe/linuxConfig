@@ -1,0 +1,59 @@
+{
+
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+      "format-muted": "🔇 muted",
+      "on-click": "amixer set Master toggle",
+      "on-scroll-up": "amixer set Master 5%-",
+      "on-scroll-down": "amixer set Master 5%+",
+      "on-click-right": "pavucontrol",
+      "scroll-step": 5,
+      "format-icons": {
+        "headphone": "",
+        "hands-free": "",
+        "headset": "",
+        "phone": "",
+        "portable": "",
+        "car": "",
+        "default": ["", "", ""]
+      },
+      "tooltip": false
+      // "tooltip-format": "{icon} at {volume}%"
+  },
+
+
+  "pulseaudio#microphone": {
+    "format": "{format_source}",
+    "format-source": " {volume}%",
+    "format-source-muted": " {volume}%",
+    "on-click": "amixer set Capture toggle",
+    "on-scroll-up": "amixer set Capture 5%-",
+    "on-scroll-down": "amixer set Capture 5%+",
+    "on-click-right": "pavucontrol -t 4",
+    // open pavucontrol tab number 4 (input)
+    "scroll-step": 5,
+    "tooltip": false
+    // "tooltip-format": " at {volume}%"
+  },
+
+  // "pulseaudio": {
+  //   "scroll-step": 1,
+  //   "format": "{icon} {volume: >3}%",
+  //   "format-bluetooth": "{icon} {volume: >3}%",
+  //   "format-muted": " muted",
+  //   "format-icons": {
+  //     "headphones": "",
+  //     "handsfree": "",
+  //     "headset": "",
+  //     "phone": "",
+  //     "portable": "",
+  //     "car": "",
+  //     "default": ["", ""]
+  //   },
+  //   "on-click": "pavucontrol",
+  //   "on-scroll-up": "pamixer -ui 2 && pamixer --get-volume > $SWAYSOCK.wob",
+  //   "on-scroll-down": "pamixer -ud 2 && pamixer --get-volume > $SWAYSOCK.wob"
+  // },
+
+}
