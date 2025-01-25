@@ -3,7 +3,7 @@
     // Misc module configurations
     //
     "custom/sep": {
-        "format": " ⁝⁝",
+        "format": " ⁝⁝ ",
     },
     // house icon, starts the "menu"
     "custom/launcher": {
@@ -48,7 +48,7 @@
     "wlr/taskbar": {
         "format": "{icon}",
         "sort-by-app-id": true,
-        "icon-size": 13,
+        "icon-size": 18,
         "icon-theme": "Numix-Circle",
         "tooltip-format": "{title}",
         "on-click": "activate",

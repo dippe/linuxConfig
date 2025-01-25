@@ -18,7 +18,7 @@
         "car": "",
         "default": ["", "", ""]
       },
-      "tooltip": false
+      "tooltip": false,
       // "tooltip-format": "{icon} at {volume}%"
   },
 

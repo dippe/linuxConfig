@@ -30,7 +30,7 @@
     // house icon + menu
     "custom/launcher",
     "sway/workspaces",
-    "custom/sep",
+    // "custom/sep",
     // // running task icons
     // "wlr/taskbar",
     
@@ -40,21 +40,21 @@
     
     "idle_inhibitor",
     // tray for bg programs
-    "tray",
-    "custom/sep",
+    // "tray",
+    // "custom/sep",
     // display sway "mode" texts or controls e.g. ctrl-esc for exit
     "sway/mode",
   ],  
   "modules-right": [
     "tray",
-    "custom/sep",
+    // "custom/sep",
      //?? dunno'
     "sway/scratchpad",
     // "custom/bluelightfilter",
     "backlight",
     "pulseaudio",
     // "pulseaudio#microphone",
-    "custom/sep",
+    // "custom/sep",
     "cpu",
     "memory",
     // "disk",

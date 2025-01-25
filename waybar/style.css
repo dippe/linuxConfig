@@ -1,15 +1,5 @@
 
 
-/* Keyframes */
-
-@keyframes blink-critical {
-	to {
-		/*color: @white;*/
-		background-color: @critical;
-	}
-}
-
-
 /* Styles */
 
 /* Colors (gruvbox) */
@@ -31,7 +21,7 @@
 @define-color white	#ebdbb2;
 @define-color bg2	#504945;
 
-/* 
+
 @define-color warning 	@bryellow;
 @define-color critical	@red;
 @define-color mode	@black;
@@ -46,7 +36,26 @@
 @define-color layout	@bryellow;
 @define-color battery	@aqua;
 @define-color date	@black;
-@define-color time	@white; */
+@define-color time	@white;
+
+
+
+/* Keyframes */
+
+@keyframes blink-critical {
+	to {
+		/*color: @white;*/
+		background-color: @critical;
+	}
+}
+
+@keyframes blink-high {
+	to {
+		/*color: @white;*/
+		background-color: @warning;
+	}
+}
+
 
 /* Reset all styles */
 * {
@@ -79,6 +88,15 @@
     opacity: 0;
 }
 
+.module{
+	margin: 0px 5px 0px 5px;
+	border: 1px solid #555;
+	border-radius: 10;
+}
+
+.module.flat, .modules-center label {
+	padding: 0px 5px 0px 5px;
+}
 
 /* Each module */
 #battery,
@@ -101,6 +119,17 @@
 }
 
 /* Each critical module */
+#mode,
+#memory.high,
+#cpu.high,
+#temperature.high{
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-name: blink-high;
+	animation-duration: 1s;
+}
+
 #mode,
 #memory.critical,
 #cpu.critical,
@@ -131,12 +160,25 @@
 }
 
 /* Workspaces stuff */
+#workspaces {
+	margin: 2px 6px 2px 6px;
+	padding: 2px 5px 2px 5px;
+	border-radius: 8px;
+	background-color: #444;
+}
+
 #workspaces button {
 	/*font-weight: bold;*/
-	padding-left: 2pt;
-	padding-right: 2pt;
+	padding: 0px 10px 0px 10px;
+	margin: 0px;
+	border-radius: 8px;
+	font-size: 12;
 	color: @white;
-	background: @unfocused;
+}
+
+#workspaces button:hover {
+	background-color: gray;
+	border: wheat;
 }
 
 /* Inactive (on unfocused output) */
@@ -168,112 +210,3 @@
 	margin-left: 35pt;
 }
 
-#pulseaudio {
-	background: @sound;
-	color: @black;
-}
-
-#network {
-	background: @network;
-	color: @white;
-}
-
-#memory {
-	background: @memory;
-	color: @black;
-}
-
-#cpu {
-	background: @cpu;
-	color: @white;
-}
-
-#temperature {
-	background: @temp;
-	color: @black;
-}
-
-#language {
-	background: @layout;
-	color: @black;
-}
-
-#battery {
-	background: @battery;
-	color: @white;
-}
-
-#tray {
-	background: #5f5f5f;
-    border-radius: 15px;
-}
-
-#clock.date {
-	background: @date;
-	color: @white;
-}
-
-#clock.time {
-	background: @time;
-	color: @black;
-}
-
-#custom-arrow1 {
-	font-size: 11pt;
-	color: @time;
-	background: @date;
-}
-
-#custom-arrow2 {
-	font-size: 11pt;
-	color: @date;
-	background: @layout;
-}
-
-#custom-arrow3 {
-	font-size: 11pt;
-	color: @layout;
-	background: @battery;
-}
-
-#custom-arrow4 {
-	font-size: 11pt;
-	color: @battery;
-	background: @temp;
-}
-
-#custom-arrow5 {
-	font-size: 11pt;
-	color: @temp;
-	background: @cpu;
-}
-
-#custom-arrow6 {
-	font-size: 11pt;
-	color: @cpu;
-	background: @memory;
-}
-
-#custom-arrow7 {
-	font-size: 11pt;
-	color: @memory;
-	background: @network;
-}
-
-#custom-arrow8 {
-	font-size: 11pt;
-	color: @network;
-	background: @sound;
-}
-
-#custom-arrow9 {
-	font-size: 11pt;
-	color: @sound;
-	background: transparent;
-}
-
-#custom-arrow10 {
-	font-size: 11pt;
-	color: @unfocused;
-	background: transparent;
-}
