@@ -34,16 +34,13 @@
     "disk",
     "temperature",
     "battery",
-
-    "backlight",
-
   ],
   "modules-left": [
     // running task icons
     "wlr/taskbar",
-    "custom/sep",
+    // "custom/sep",
     "tray",
-    "custom/sep",
+    // "custom/sep",
     // // house icon + menu :
     // "custom/launcher",
     // // waybar config change : 
