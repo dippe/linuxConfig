@@ -2,8 +2,8 @@
 
 
   "pulseaudio": {
-    "format": "{icon} {volume}%",
-      "format-muted": "🔇 muted",
+    "format": "{icon} {volume}%",
+      "format-muted": "🔇 muted",
       "on-click": "amixer set Master toggle",
       "on-scroll-up": "amixer set Master 5%-",
       "on-scroll-down": "amixer set Master 5%+",
@@ -25,7 +25,7 @@
 
   "pulseaudio#microphone": {
     "format": "{format_source}",
-    "format-source": " {volume}%",
+    "format-source": " {volume}%",
     "format-source-muted": " {volume}%",
     "on-click": "amixer set Capture toggle",
     "on-scroll-up": "amixer set Capture 5%-",

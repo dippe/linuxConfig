@@ -5,11 +5,12 @@
 
 
     "cpu": {
-        "format": " {usage: >1}%",
-        // "format": " {icon}",
+        // usage with padding if needed:
+        "format": " {usage:2}%",
+        // "format": " {icon}",
         // "format-icons": [ " ", "▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
         "tooltip": true,
-        "tooltip-format": "cpu: {icon} {usage}%",
+        "tooltip-format": "cpu: {icon} {usage}%",
         "on-click": "alacritty -e htop",
         "format-alt-click": "click-right",
         "on-click": "~/.config/waybar/scripts/stats.sh cpu",
@@ -20,7 +21,7 @@
         }
     },
     "memory": {
-        "format": " {: >1}%",
+        "format": " {:2}%",
         "tooltip": true,
         "tooltip-format": "ram: {used} GB / {total} GB ({percentage}%) / Swap used: {swapUsed}GB",
         "on-click": "alacritty -e btop",
@@ -49,8 +50,8 @@
         // "thermal-zone": 2,
         // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
         "critical-threshold": 70,
-        "format-critical": "!! {temperatureC}°C {icon} !!",
-        "format": "{icon} {temperatureC}°C",
+        "format-critical": "!! {temperatureC}°C {icon} !!",
+        "format": "{icon} {temperatureC}°C",
         "format-icons": [
             "",
             "",
@@ -60,7 +61,7 @@
     },
     "backlight": {
         // "device": "acpi_video1",
-        "format": "{icon} {percent}%",
+        "format": "{icon} {percent}%",
         "format-icons": [
             "",
             ""
@@ -74,10 +75,10 @@
             "warning": 15,
             "critical": 10
         },
-        "format": "{icon} {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
-        "format-alt": "{icon} {capacity}% {time}",
+        "format": "{icon} {capacity:2}%",
+        "format-charging": " {capacity:2}%",
+        "format-plugged": " {capacity:2}%",
+        "format-alt": "{icon} {capacity:2}% {time}",
         "format-icons": [
             " ",
             " ",
@@ -88,7 +89,7 @@
     },
     "custom/gpu": {
         "exec": "cat /sys/class/drm/card0/device/gpu_busy_percent",
-        "format": "gpu: {icon} {}%",
+        "format": "gpu: {icon} {}%",
         "format-icons": [
             "▁",
             "▂",
