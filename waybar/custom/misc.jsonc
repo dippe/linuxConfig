@@ -40,7 +40,8 @@
     // swap full config of waybar
     "custom/config-swap": {
         "on-click": "~/.config/waybar/scripts/swap.sh",
-        "tooltip": "Swap between waybar configs",
+        "tooltip-format": "Swap between waybar configs",
+        "tooltip": true,
         "format": "Bg  "
     },
     // runing task icons
@@ -68,7 +69,10 @@
         "format-icons": {
             "activated": "",
             "deactivated": ""
-        }
+        },
+        "tooltip": true,
+        "tooltip-format-activated": "Enabled: monitor will be turned off after 60 sec idle time",
+        "tooltip-format-deactivated": "Disabled: monitor will be not turned off automatically"
     },
     // house icon, starts the "menu"
     "custom/launcher": {
@@ -80,8 +84,9 @@
     "custom/reload-config": {
         // you can start a custom command immediately after starting the waybar
         //"exec": "sh ~/.config/waybar/scripts/something.sh",
-        "format": "Reload conf",
-        "tooltip": false,
+        "format": "⟳",
+        "tooltip": true,
+        "tooltip-format": "Reload waybar conf",
         "on-click": "swaymsg reload & pkill waybar & waybar",
         "layer": "below",
         "output": "all"
@@ -119,7 +124,8 @@
     "network": {
         // "interface": "wlp2s0", // (Optional) To force the use of this interface
         "format": "⚠ Disabled",
-        "format-wifi": " {essid} {signalStrength}%",
+        "format-wifi": "",
+        // "format-wifi": " {essid} {signalStrength}%",
         // "format-ethernet": " {ifname}: {ipaddr}/{cidr}",
         "format-ethernet": " Wired",
         "format-disconnected": "⚠ Offline",

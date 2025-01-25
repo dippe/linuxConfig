@@ -31,11 +31,13 @@
     "custom/launcher",
     "sway/workspaces",
     "custom/sep",
-    // running task icons
-    "wlr/taskbar",
+    // // running task icons
+    // "wlr/taskbar",
+    
     // waybar config change
     "custom/config-swap",
     "custom/reload-config",
+    
     "idle_inhibitor",
     // tray for bg programs
     "tray",
@@ -48,26 +50,26 @@
     "custom/sep",
      //?? dunno'
     "sway/scratchpad",
-    "custom/bluelightfilter",
+    // "custom/bluelightfilter",
     "backlight",
     "pulseaudio",
-    "pulseaudio#microphone",
+    // "pulseaudio#microphone",
     "custom/sep",
     "cpu",
     "memory",
-    "disk",
+    // "disk",
     "temperature",
     "battery",
     // "custom/gpu",
-    "custom/sep",
-    "network",
+    // "custom/sep",
+    // "network",
     "custom/keyboard-layout",
     "clock",
     // open the notification panel
-    "custom/notification",
-    "custom/sep",
+    // "custom/sep",
     // "user",
-    "custom/power",
+    // "custom/power",
+    "custom/notification",
   ],  
 
 }

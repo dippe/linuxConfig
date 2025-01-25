@@ -12,7 +12,7 @@
         "days": "<span color='#ecc6d9'><b>{}</b></span>",
         "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
         "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
-        "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+        "today": "<span color='#ff6699' background='black'><b><u>{}</u></b></span>"
       }
     },
     "actions": {
@@ -22,11 +22,10 @@
       "on-scroll-up": "shift_up",
       "on-scroll-down": "shift_down"
     },
-    "format": "  {:%a %d %b  %I:%M %p}", //12 hour format
-    // "format": " {:%d %m %Y  %H:%M}",	//24 hour format
-    "format-alt": "  {:%d/%m/%Y  %H:%M:%S}",
-    // //"timezones": [ "Kolkata" ],
-    // //"max-length": 200
+    // "format": "  {:%a %d %b  %I:%M %p}", //12 hour format
+    // "format": " {:%d %m %Y  %H:%M}",	//24 hour format with date
+    "format": " {:%H:%M}",	// 24 hour format without date
+    "format-alt": " {:%Y-%m-%d  %H:%M:%S}",
     "interval": 1
   },
 }

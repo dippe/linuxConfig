@@ -76,8 +76,8 @@
             "critical": 10
         },
         "format": "{icon} {capacity:2}%",
-        "format-charging": " {capacity:2}%",
-        "format-plugged": " {capacity:2}%",
+        "format-charging": " {capacity:2}%",
+        "format-plugged": " {capacity:2}%",
         "format-alt": "{icon} {capacity:2}% {time}",
         "format-icons": [
             " ",
@@ -91,6 +91,7 @@
         "exec": "cat /sys/class/drm/card0/device/gpu_busy_percent",
         "format": "gpu: {icon} {}%",
         "format-icons": [
+            " ",
             "▁",
             "▂",
             "▃",
