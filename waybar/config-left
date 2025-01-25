@@ -1,0 +1,58 @@
+{
+  // dp's waybar configuration
+  //
+  // module docs: https://github.com/Alexays/Waybar/wiki
+  //
+  
+  "include": [
+    "~/.config/waybar/custom/hardware.jsonc",
+    "~/.config/waybar/custom/misc.jsonc",
+    "~/.config/waybar/custom/audio.jsonc",
+  ],
+  
+  // the bar id is determined in the terminal: waybar -b leftbar
+  // unfortunately this is not working:
+  // "bar_id": "leftbar",
+
+  "ipc": true, // ipc allows controlling via swaymsg
+  "layer": "top", // Waybar at top layer
+  "position": "left", // Waybar position (top|bottom|left|right)
+  "width": 50,
+  "margin": "0 0 0 0",
+  "mode": "hide",
+  
+
+  "modules-center": [
+    "custom/bluelightfilter",
+    "backlight",
+    "pulseaudio",
+    "pulseaudio#microphone",
+
+    "cpu",
+    "memory",
+    // "custom/gpu",
+    "disk",
+    "temperature",
+    "battery",
+  ],
+  "modules-left": [
+    // running task icons
+    "wlr/taskbar",
+    "custom/sep",
+    "tray",
+    "custom/sep",
+    // // house icon + menu :
+    // "custom/launcher",
+    // // waybar config change : 
+    // "custom/config-swap",
+    // "custom/reload-config",
+    // "idle_inhibitor",
+    // // open the notification panel
+    "custom/notification",
+    "custom/power",
+  ],
+  "modules-right": [
+
+  ],
+
+}

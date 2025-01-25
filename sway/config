@@ -380,21 +380,22 @@ client.background       #f2f2f2
 # status_command while date +'%A, %d-%m-%Y %H:%M %j'; do sleep 1; done
 #
 bar {
+    id bar-0
     swaybar_command waybar
-    position top
+}
+
+bar {
+    id leftbar
+    # this command cannot have parameters, so a custom script is needed
+    swaybar_command .config/waybar/waybar-left-start.sh
 
     # show-hide toggle using the Mod4:
-    #hidden_state hide
-    #mode hide
+    hidden_state hide 
+    mode hide 
     modifier Mod4
 
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %X'; do sleep 1; done
-
-    colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
 }
+
+
+bindsym $mod+m bar mode invisible ["bar-1"]
+bindsym $mod+n bar mode dock bar-1

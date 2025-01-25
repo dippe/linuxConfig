@@ -11,13 +11,15 @@
     "~/.config/waybar/custom/audio.jsonc",
   ],
   
-  "bar_id": "bar-0",
-  "ipc": true,
+  // the bar id is determined in the terminal: waybar -b leftbar
+  // unfortunately this is not working:
+  // "bar_id": "bar-0",
+
+  "ipc": true, // ipc allows controlling via swaymsg
   "layer": "top", // Waybar at top layer
   "position": "top", // Waybar position (top|bottom|left|right)
   "height": 35,
   "margin": "0 0 0 0",
-  //"width": 1350, // Waybar width
   
 
   "modules-center": [
